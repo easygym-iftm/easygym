@@ -7,9 +7,29 @@
 <body>
 
 	<div th:fragment="conteudo">
+		<div id="carouselSite" class="carousel slide" data-ride="carousel">
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img src="img/01.jpg" class="img-fluid d-block">		
+				</div>
+				<div class="carousel-item">
+					<img src="img/02.jpg" class="img-fluid d-block">		
+				</div>
+				<div class="carousel-item">
+					<img src="img/03.jpg" class="img-fluid d-block">		
+				</div>
+			</div>
+			
+		</div>
+		<a class="carousel-control-prev" href="#carouselSite" role="button" data-slide="prev">
+			<span class="carousel-control-prev-icon"></span>
+			<span class="sr-only">Anterior</span>		
+		</a>
 		
-					<img src="" class="img-fluid d-block">
-		
+		<a class="carousel-control-next" href="#carouselSite" role="button" data-slide="next">
+			<span class="carousel-control-next-icon"></span>
+			<span class="sr-only">Avançar</span>		
+		</a>
 	</div>
 
 </body>
