@@ -12,31 +12,57 @@
 </head>
 <body>
 
-	<div th:fragment="navbar" class="navbar navbar-expand-md navbar-light bg-light">
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<ul class="navbar-nav mr-auto">
-				<li class="nav-item">
-					<a class="nav-link btn btn-primary btn-lg text-white m-1" href="/">Home</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link btn btn-primary btn-lg text-white m-1" href="/clientes">Clientes</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link btn btn-primary btn-lg text-white m-1" href="/funcionarios">Funcionários</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link btn btn-primary btn-lg text-white m-1" href="/planos">Planos</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link btn btn-primary btn-lg text-white m-1" href="/horarios">Horários</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link btn btn-primary btn-lg text-white m-1" href="/financeiro">Financeiro</a>
-				</li>
-			</ul>
+	<div th:fragment="navbar" class="navbar navbar-fixed-top navbar-expand-lg navbar-dark bg-dark">
+		<div class="container">
+	
+			<a class="navbar-brand h1 mb-0 text-success" href="/">EasyGym</a>
+			
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSite">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			
+			<div class="collapse navbar-collapse" id="navbarSite">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="navDropClientes">Clientes</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="/clientes">Novo Cliente</a>
+							<a class="dropdown-item" href="#">Gerenciar Clientes</a>
+						</div>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="navDropFunc">Funcionários</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="/funcionarios">Novo Funcionário</a>
+							<a class="dropdown-item" href="#">Gerenciar Funcionários</a>
+						</div>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="navDropPlanos">Planos</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="/planos">Cadastrar Plano</a>
+							<a class="dropdown-item" href="#">Gerenciar Planos</a>
+						</div>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="navDropHorario">Horários</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="/planos">Cadastrar Horário</a>
+							<a class="dropdown-item" href="#">Gerenciar Horários</a>
+						</div>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/financeiro">Financeiro</a>
+					</li>
+				</ul>
+				
+				<ul class="navbar-nav ml-auto">
+					<form class="form-inline">
+						<input class="form-control ml-4 mr-2" type="search" placeholder="Pesquisar...">
+						<button class="btn btn-success" type="Submit">Buscar</button>
+					</form>
+				</ul>
+			</div>
 		</div>
 	</div>
 
