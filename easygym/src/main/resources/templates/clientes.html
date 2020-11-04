@@ -1,14 +1,114 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" th:include="fragments/modelo :: modelo">
 <head>
+
 <meta charset="utf-8">
 <title>EasyGym - Academia</title>
 </head>
 <body>
 
 	<div th:fragment="conteudo">
-		<h1>Cadastro de Clientes</h1>
-
+		<div class="container">
+			<div class="row">
+				<div class="col-12 text-center my-3">
+					<h1 class="display-4">Cadastro de Cliente</h1>
+				</div>
+				
+			</div>
+			<div class="row justify-content-center mb-5">
+				<div class="col-sm-12 col-md-10 col-lg-8">
+				<div class="jumbotron">
+					<form>
+						<div class="form-row">
+							<div class="form-group col-sm-6">
+								<label for="inputNome">Nome:</label>
+								<input type="text" class="form-control" id="inputNome" placeholder="Nome do cliente">
+							</div>
+							
+							<div class="form-group col-sm-6">
+								<label for="inputCpf">CPF:</label>
+								<input type="text" class="form-control" id="inputCpf" placeholder="xxx.xxx.xxx-xx">
+							</div>						
+						</div>
+						<div class="form-row">
+							<div class="form-group col-sm-4">
+								<label for="inputEmail">E-mail:</label>
+								<input type="text" class="form-control" id="inputEmail" placeholder="cliente@cliente.com">
+							</div>
+							
+							<div class="form-group col-sm-4">
+								<label for="inputTelefone">Telefone:</label>
+								<input type="text" class="form-control" id="inputTelefone" placeholder="(00)00000-0000">
+							</div>
+							<div class="form-group col-sm-4">
+								<label for="inputCep">CEP:</label>
+								<input type="text" class="form-control" id="inputCep" placeholder="00000-000">
+							</div>						
+						</div>
+						<div class="form-row">
+							<div class="form-group col-sm-12">
+								<label for="inputEnd">Endereço:</label>
+								<input type="text" class="form-control" id="inputEnd" placeholder="Digite o endereço">
+							</div>
+												
+						</div>
+						<div class="form-row">
+							<div class="form-group col-sm-6">
+								<label for="inputCidade">Cidade:</label>
+								<input type="text" class="form-control" id="inputCidade" placeholder="Cidade">
+							</div>
+							
+							<div class="form-group col-sm-6">
+								<label for="inputEstado">Estado:</label>
+								<select class="form-control" id="inputEstado">
+									<option selected>Selecione um estado</option>
+									<option>MG</option>
+									<option>...</option>
+									<option>...</option>
+									<option>...</option>
+								</select>
+							</div>					
+						</div>
+						<div class="form-row">
+							<div class="form-group col-sm-4">
+								<label for="inputPlano">Plano:</label>
+								<select class="form-control" id="inputPlano">
+									<option selected>Selecione um plano</option>
+									<option>Mensal</option>
+									<option>Trimestral</option>
+									<option>Semestral</option>
+									<option>Diarista</option>
+								</select>
+							</div>
+							
+							<div class="form-group col-sm-4">
+								<label for="inputHorario">Horário:</label>
+								<select class="form-control" id="inputHorario">
+									<option selected>Selecione um horário</option>
+									<option>Horário livre</option>
+									<option>Horário light (10 às 16)</option>
+								</select>
+							</div>
+							<div class="form-group col-sm-4">
+								<label for="inputInstrutor">Instrutor:</label>
+								<select class="form-control" id="inputInstrutor">
+									<option selected>Selecione um instrutor</option>
+									<option>João</option>
+									<option>Maria</option>
+									<option>Ana</option>
+								</select>
+							</div>						
+						</div>
+					
+						<div class="form-row">
+							<button type="submit" class="btn btn-success">Salvar</button>
+						</div>
+					</form>
+					</div>
+				
+				</div>
+			</div>		
+		</div>
 	</div>
 
 </body>

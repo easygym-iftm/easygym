@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:include="fragments/modelo :: modelo">
+<head>
+
+<meta charset="utf-8">
+<title>EasyGym - Academia</title>
+</head>
+<body>
+
+	<div th:fragment="conteudo">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 text-center my-3">
+					<h1 class="display-4">Dados do Cliente</h1>
+				</div>
+				
+			</div>
+			<div class="row justify-content-center mb-5">
+				<div class="col-sm-12 col-md-10 col-lg-8">
+				<div class="jumbotron">
+						<div class="row">
+							<div class="col-sm-6">
+								<p><strong>Plano:</strong></p>
+								<p>Mensal</p>
+							</div>
+							
+							<div class="col-sm-6">
+								<p><strong>Valor:</strong></p>
+								<p>90,00</p>
+							</div>						
+						</div>
+						
+						<div class="row">
+							<a href="/edit-plano" class="btn btn-success mr-2">Editar</a>
+  							<a href="/ger-planos" class="btn btn-dark">Voltar</a>
+						</div>
+					</div>
+				
+				</div>
+			</div>		
+		</div>
+	</div>
+
+</body>
+</html>

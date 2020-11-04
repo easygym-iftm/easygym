@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:include="fragments/modelo :: modelo">
+<head>
+
+<meta charset="utf-8">
+<title>EasyGym - Academia</title>
+</head>
+<body>
+
+	<div th:fragment="conteudo">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 text-center my-3">
+					<h1 class="display-4">Dados do Funcinário</h1>
+				</div>
+				
+			</div>
+			<div class="row justify-content-center mb-5">
+				<div class="col-sm-12 col-md-10 col-lg-8">
+				<div class="jumbotron">
+						<div class="row">
+							<div class="col-sm-6">
+								<p><strong>Nome:</strong></p>
+								<p>Luana Martins da Silva</p>
+							</div>
+							
+							<div class="col-sm-6">
+								<p><strong>CPF:</strong></p>
+								<p>989.777.123.00</p>
+							</div>						
+						</div>
+						<div class="row">
+							<div class="col-sm-4">
+								<p><strong>E-mail:</strong></p>
+								<p>luanam@site.com.br</p>
+							</div>
+							
+							<div class="col-sm-4">
+								<p><strong>Telefone:</strong></p>
+								<p>(34)98989-9999</p>
+							</div>
+							<div class="col-sm-4">
+								<p><strong>CEP:</strong></p>
+								<p>38000-222</p>
+							</div>						
+						</div>
+						<div class="row">
+							<div class="col-sm-12">
+								<p><strong>Endereço:</strong></p>
+								<p>Rua Saturno, 489</p>
+							</div>
+												
+						</div>
+						<div class="row">
+							<div class="col-sm-6">
+								<p><strong>Cidade:</strong></p>
+								<p>Uberlândia</p>
+							</div>
+							
+							<div class="col-sm-6">
+								<p><strong>Estado:</strong></p>
+								<p>MG</p>
+							</div>					
+						</div>
+						<div class="row">
+							<div class="col-sm-4">
+								<p><strong>Função:</strong></p>
+								<p>Instrutor</p>
+							</div>
+							
+							<div class="col-sm-4">
+								<p><strong>Horário:</strong></p>
+								<p>06:00 às 14:00</p>
+							</div>
+							<div class="col-sm-4">
+								<p><strong>Dias:</strong></p>
+								<p>Seg a Sex</p>
+							</div>						
+						</div>
+					
+						<div class="row">
+							<a href="/edit-funcionario" class="btn btn-success mr-2">Editar</a>
+  							<a href="/ger-funcionarios" class="btn btn-dark">Voltar</a>
+						</div>
+					</form>
+					</div>
+				
+				</div>
+			</div>		
+		</div>
+	</div>
+
+</body>
+</html>

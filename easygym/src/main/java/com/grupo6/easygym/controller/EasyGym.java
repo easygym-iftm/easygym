@@ -60,4 +60,49 @@ public class EasyGym {
 		return "financeiro";
 		
 	}
+	@RequestMapping("/edit-cliente")
+	public String pg11() {
+		return "edit-cliente";
+		
+	}
+	@RequestMapping("/vis-cliente")
+	public String pg12() {
+		return "vis-cliente";
+		
+	}
+	@RequestMapping("/edit-plano")
+	public String pg13() {
+		return "edit-plano";
+		
+	}
+	@RequestMapping("/vis-plano")
+	public String pg14() {
+		return "vis-plano";
+		
+	}
+	@RequestMapping("/edit-horario")
+	public String pg15() {
+		return "edit-horario";
+		
+	}
+	@RequestMapping("/vis-horario")
+	public String pg16() {
+		return "vis-horario";
+		
+	}
+	@RequestMapping("/edit-funcionario")
+	public String pg17() {
+		return "edit-funcionario";
+		
+	}
+	@RequestMapping("/vis-funcionario")
+	public String pg18() {
+		return "vis-funcionario";
+		
+	}
+	@RequestMapping("/result-busca")
+	public String pg19() {
+		return "result-busca";
+		
+	}
 }

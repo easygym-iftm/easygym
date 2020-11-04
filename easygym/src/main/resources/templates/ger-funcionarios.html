@@ -1,14 +1,90 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" th:include="fragments/modelo :: modelo">
 <head>
+
 <meta charset="utf-8">
 <title>EasyGym - Academia</title>
 </head>
 <body>
 
 	<div th:fragment="conteudo">
-		<h1>Gerenciamento de Funcionário</h1>
-
+		<div class="container">
+			<div class="row">
+				<div class="col-12 text-center my-3">
+					<h1 class="display-4">Gerenciamento de Funcionários</h1>
+				</div>
+				
+			</div>
+			<div id="list" class="row">
+ 
+		    <div class="table-responsive col-md-12">
+		        <table class="table table-striped" cellspacing="0" cellpadding="0">
+		            <thead>
+		                <tr>
+		                    <th>ID</th>
+		                    <th>NOME</th>
+		                    <th class="text-center">FUNÇÃO</th>
+		                    <th class="text-center">HORÁRIO</th>
+		                    <th class="text-center">DIAS</th>
+		                    <th class="actions text-center">Ações</th>
+		                 </tr>
+		            </thead>
+		            <tbody>
+		 
+		                <tr>
+		                    <td>1001</td>
+		                    <td>Luana Martins da Silva</td>
+		                    <td class="text-center">Instrutor</td>
+		                    <td class="text-center">06:00 às 14:00</td>
+		                    <td class="text-center">Seg a Sex</td>
+		                    <td class="actions text-center">
+		                        <a class="btn btn-success btn-xs" href="/vis-funcionario">Visualizar</a>
+		                        <a class="btn btn-secondary btn-xs" href="/edit-funcionario">Editar</a>
+		                        <a class="btn btn-dark btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
+		                    </td>
+		                </tr>
+		 				<tr>
+		                    <td>1002</td>
+		                    <td>Caio Souza</td>
+		                    <td class="text-center">Instrutor</td>
+		                    <td class="text-center">14:00 às 20:00</td>
+		                    <td class="text-center">Seg a Sex</td>
+		                    <td class="actions text-center">
+		                        <a class="btn btn-success btn-xs" href="/vis-funcionario">Visualizar</a>
+		                        <a class="btn btn-secondary btn-xs" href="/edit-funcionario">Editar</a>
+		                        <a class="btn btn-dark btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
+		                    </td>
+		                </tr>
+		                <tr>
+		                    <td>1003</td>
+		                    <td>Mariana da Silva</td>
+		                    <td class="text-center">Recepcionista</td>
+		                    <td class="text-center">08:00 às 18:00</td>
+		                    <td class="text-center">Seg a Sab</td>
+		                    <td class="actions text-center">
+		                        <a class="btn btn-success btn-xs" href="/vis-funcionario">Visualizar</a>
+		                        <a class="btn btn-secondary btn-xs" href="/edit-funcionario">Editar</a>
+		                        <a class="btn btn-dark btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
+		                    </td>
+		                </tr>
+		                <tr>
+		                    <td>1004</td>
+		                    <td>Carlos Matoso</td>
+		                    <td class="text-center">Gerente</td>
+		                    <td class="text-center">08:00 às 18:00</td>
+		                    <td class="text-center">Seg a Sex</td>
+		                    <td class="actions text-center">
+		                        <a class="btn btn-success btn-xs" href="/vis-funcionario">Visualizar</a>
+		                        <a class="btn btn-secondary btn-xs" href="/edit-funcionario">Editar</a>
+		                        <a class="btn btn-dark btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
+		                    </td>
+		                </tr>
+		            </tbody>
+		         </table>
+		 
+		     </div>
+		 </div>
+		</div>
 	</div>
 
 </body>
