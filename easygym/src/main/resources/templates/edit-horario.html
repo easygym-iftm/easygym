@@ -18,16 +18,17 @@
 			<div class="row justify-content-center mb-5">
 				<div class="col-sm-12 col-md-5 col-lg-8">
 				<div class="jumbotron">
-					<form>
-						<div class="form-row">
+				<form action="/editar-horario" method="post" th:object="${horario}">						
+				<div class="form-row">
 							<div class="form-group col-sm-6">
+								<input type="hidden" class="form-control" th:field="*{cod_horario}">
 								<label for="inputHorario">Horário:</label>
-								<input type="text" class="form-control" id="inputHorario" value="Livre">
+								<input type="text" class="form-control" th:field="*{horario}" value="Livre">
 							</div>
 							
 							<div class="form-group col-sm-6">
 								<label for="inputFaixa">Faixa horária:</label>
-								<input type="text" class="form-control" id="inputFaixa" value="06:00 às 23:00">
+								<input type="text" class="form-control" th:field="*{faixa_horario}" value="06:00 às 23:00">
 							</div>						
 						</div>
 						

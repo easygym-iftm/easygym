@@ -29,31 +29,16 @@
 		            </thead>
 		            <tbody>
 		 
-		                <tr>
-		                    <td>1001</td>
-		                    <td class="text-center">Livre</td>
-		                    <td class="text-center">06:00 às 23:00</td>
+		               <tr th:each="horario:${lista}" th:object="${horario}">
+		                    <td th:text="*{cod_horario}">Cod</td>
+		                    <td th:text="*{horario}" class="text-center">Horário</td>
+		                    <td th:text="*{faixa_horario}" class="text-center">Faixa Horária</td>
 		                    <td class="actions text-center">
-		                        <a class="btn btn-success btn-xs" href="/vis-horario">Visualizar</a>
-		                        <a class="btn btn-secondary btn-xs" href="/edit-horario">Editar</a>
-		                        <a class="btn btn-dark btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
+		                        <a class="btn btn-success btn-xs" th:href="@{/vis-horario(cod_horario=${horario.cod_horario})}">Visualizar</a>
+		                        <a class="btn btn-secondary btn-xs" th:href="@{/edit-horario(cod_horario=${horario.cod_horario})}">Editar</a>
+		                        <a class="btn btn-dark btn-xs" th:href="@{/excluir(cod_horario=${horario.cod_horario})}">Excluir</a>
 		                    </td>
 		                </tr>
-		 
-		            		 
-		                <tr>
-		                    <td>1002</td>
-		                    <td class="text-center">Light</td>
-		                    <td class="text-center">10:00 às 16:00</td>
-		                    <td class="actions text-center">
-		                        <a class="btn btn-success btn-xs" href="/vis-horario">Visualizar</a>
-		                        <a class="btn btn-secondary btn-xs" href="/edit-horario">Editar</a>
-		                        <a class="btn btn-dark btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
-		                    </td>
-		                </tr>
-		 
-		                
-		                
 		            </tbody>
 		         </table>
 		 

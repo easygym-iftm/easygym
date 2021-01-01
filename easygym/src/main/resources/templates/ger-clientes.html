@@ -23,71 +23,29 @@
 		                <tr>
 		                    <th>ID</th>
 		                    <th>NOME</th>
-		                    <th class="text-center">PLANO</th>
-		                    <th class="text-center">HORÁRIO</th>
+		                    <th>PLANO</th>
+		                    <th>HORÁRIO</th>
+		                    <th>VALOR</th>
+		                    <th>INSTRUTOR</th>
 		                    <th class="actions text-center">Ações</th>
 		                 </tr>
 		            </thead>
 		            <tbody>
 		 
-		                <tr>
-		                    <td>1001</td>
-		                    <td>Alex Sandro Moreira</td>
-		                    <td class="text-center">Semestral</td>
-		                    <td class="text-center">Livre</td>
+		                <tr th:each="cliente:${lista}" th:object="${cliente}">
+		                    <td th:text="*{cod_cli}">Cod</td>
+		                    <td th:text="*{nome_cli}">Nome</td>
+		                    <td th:text="*{plano_c.nome_plano}">Plano</td>
+		                    <td th:text="*{plano_c.horario.faixa_horario}">Horario</td>
+		                    <td th:text="*{plano_c.valor_mensal}">Valor</td>
+		                    <td th:text="*{funcionario.nome_func}">Instrutor</td>
 		                    <td class="actions text-center">
-		                        <a class="btn btn-success btn-xs" href="/vis-cliente">Visualizar</a>
-		                        <a class="btn btn-secondary btn-xs" href="/edit-cliente">Editar</a>
-		                        <a class="btn btn-dark btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
-		                    </td>
-		                </tr>
-		 
-		            		 
-		                <tr>
-		                    <td>1002</td>
-		                    <td>Paulo Roberto dos Santos</td>
-		                    <td class="text-center">Semestral</td>
-		                    <td class="text-center">Livre</td>
-		                    <td class="actions text-center">
-		                        <a class="btn btn-success btn-xs" href="/vis-cliente">Visualizar</a>
-		                        <a class="btn btn-secondary btn-xs" href="/edit-cliente">Editar</a>
-		                        <a class="btn btn-dark btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
+		                        <a class="btn btn-success btn-xs" th:href="@{/vis-cliente(cod_cli=${cliente.cod_cli})}">Visualizar</a>
+		                        <a class="btn btn-secondary btn-xs" th:href="@{/edit-cliente(cod_cli=${cliente.cod_cli})}">Editar</a>
+		                        <a class="btn btn-dark btn-xs" th:href="@{/excluir-cliente(cod_cli=${cliente.cod_cli})}">Excluir</a>
 		                    </td>
 		                </tr>
 		                
-		                <tr>
-		                    <td>1003</td>
-		                    <td>Ana Maria dos Santos</td>
-		                    <td class="text-center">Mensal</td>
-		                    <td class="text-center">Light</td>
-		                    <td class="actions text-center">
-		                        <a class="btn btn-success btn-xs" href="/vis-cliente">Visualizar</a>
-		                        <a class="btn btn-secondary btn-xs" href="/edit-cliente">Editar</a>
-		                        <a class="btn btn-dark btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
-		                    </td>
-		                </tr>
-		                 <tr>
-		                    <td>1004</td>
-		                    <td>Thiago Andrade</td>
-		                    <td class="text-center">Trimestral</td>
-		                    <td class="text-center">Livre</td>
-		                    <td class="actions text-center">
-		                        <a class="btn btn-success btn-xs" href="/vis-cliente">Visualizar</a>
-		                        <a class="btn btn-secondary btn-xs" href="/edit-cliente">Editar</a>
-		                        <a class="btn btn-dark btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
-		                    </td>
-		                </tr>
-		                <tr>
-		                    <td>1005</td>
-		                    <td>Vanessa Vieira</td>
-		                    <td class="text-center">Mensal</td>
-		                    <td class="text-center">Livre</td>
-		                    <td class="actions text-center">
-		                        <a class="btn btn-success btn-xs" href="/vis-cliente">Visualizar</a>
-		                        <a class="btn btn-secondary btn-xs" href="/edit-cliente">Editar</a>
-		                        <a class="btn btn-dark btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
-		                    </td>
-		                </tr>
 		 
 		            </tbody>
 		         </table>

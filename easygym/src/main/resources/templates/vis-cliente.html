@@ -18,71 +18,70 @@
 			<div class="row justify-content-center mb-5">
 				<div class="col-sm-12 col-md-10 col-lg-8">
 				<div class="jumbotron">
-						<div class="row">
+				<form action="" method="" th:object="${cliente}">
+						<div class="row">					
 							<div class="col-sm-6">
 								<p><strong>Nome:</strong></p>
-								<p>Alex Sandro Moreira</p>
+								<p th:text="*{nome_cli}">Nome</p>
 							</div>
 							
 							<div class="col-sm-6">
 								<p><strong>CPF:</strong></p>
-								<p>088.321.626-44</p>
+								<p th:text="*{cpf_cli}">CPF</p>
 							</div>						
 						</div>
 						<div class="row">
 							<div class="col-sm-4">
 								<p><strong>E-mail:</strong></p>
-								<p>alexmoreiraptc@gmail.com</p>
+								<p th:text="*{email_cli}">email</p>
 							</div>
 							
 							<div class="col-sm-4">
 								<p><strong>Telefone:</strong></p>
-								<p>(34)99999-9999</p>
+								<p th:text="*{telefone_cli}">telefone</p>
 							</div>
 							<div class="col-sm-4">
 								<p><strong>CEP:</strong></p>
-								<p>38408-184</p>
+								<p th:text="*{cep_cli}">cep</p>
 							</div>						
 						</div>
 						<div class="row">
 							<div class="col-sm-12">
 								<p><strong>Endereço:</strong></p>
-								<p>Avenida João Naves de Ávila, 1</p>
+								<p th:text="*{end_cli}">endereço</p>
 							</div>
 												
 						</div>
 						<div class="row">
 							<div class="col-sm-6">
 								<p><strong>Cidade:</strong></p>
-								<p>Uberlândia</p>
+								<p th:text="*{cidade_cli}">cidade</p>
 							</div>
 							
 							<div class="col-sm-6">
 								<p><strong>Estado:</strong></p>
-								<p>MG</p>
+								<p th:text="*{estado.sigla}"></p>
 							</div>					
 						</div>
 						<div class="row">
 							<div class="col-sm-4">
 								<p><strong>Plano:</strong></p>
-								<p>Semestral</p>
-							</div>
-							
-							<div class="col-sm-4">
-								<p><strong>Horário:</strong></p>
-								<p>Livre</p>
+								<p th:text="*{plano_c.nome_plano} +' | '+ *{plano_c.horario.faixa_horario}"></p>
 							</div>
 							<div class="col-sm-4">
 								<p><strong>Instrutor:</strong></p>
-								<p>Maria</p>
-							</div>						
-						</div>
-					
-						<div class="row">
-							<a href="/edit-cliente" class="btn btn-success mr-2">Editar</a>
-  							<a href="/ger-clientes" class="btn btn-dark">Voltar</a>
+								<p th:text="*{funcionario.nome_func}">Maria</p>
+							</div>	
+							<div class="col-sm-4">
+								<p><strong>Valor:</strong></p>
+								<p th:text="*{plano_c.valor_mensal}"></p>
+							</div>					
 						</div>
 					</form>
+						<div class="row">
+							<a class="btn btn-secondary btn-xs" th:href="@{/edit-cliente(cod_cli=${cliente.cod_cli})}">Editar</a>
+  							<a href="/ger-clientes" class="btn btn-dark">Voltar</a>
+						</div>
 					</div>
 				
 				</div>

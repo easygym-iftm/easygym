@@ -18,80 +18,98 @@
 			<div class="row justify-content-center mb-5">
 				<div class="col-sm-12 col-md-10 col-lg-8">
 				<div class="jumbotron">
-					<form>
+					<form action="/cad-funcionario" method="post" th:object="${func}">
 						<div class="form-row">
 							<div class="form-group col-sm-6">
 								<label for="inputNome">Nome:</label>
-								<input type="text" class="form-control" id="inputNome" placeholder="Nome do funcionário">
+								<input type="text" class="form-control" th:field="*{nome_func}" placeholder="Nome do funcionário">
 							</div>
 							
 							<div class="form-group col-sm-6">
 								<label for="inputCpf">CPF:</label>
-								<input type="text" class="form-control" id="inputCpf" placeholder="xxx.xxx.xxx-xx">
+								<input type="text" class="form-control" th:field="*{cpf_func}" placeholder="xxx.xxx.xxx-xx" onkeypress="$(this).mask('000.000.000-00');">
 							</div>						
 						</div>
 						<div class="form-row">
 							<div class="form-group col-sm-4">
 								<label for="inputEmail">E-mail:</label>
-								<input type="text" class="form-control" id="inputEmail" placeholder="funcionario@func.com.br">
+								<input type="text" class="form-control" th:field="*{email_func}" placeholder="funcionario@func.com.br">
 							</div>
 							
 							<div class="form-group col-sm-4">
 								<label for="inputTelefone">Telefone:</label>
-								<input type="text" class="form-control" id="inputTelefone" placeholder="(00)00000-0000">
+								<input type="text" class="form-control" th:field="*{telefone_func}" placeholder="(00)00000-0000" onkeypress="$(this).mask('(00) 00000-0009')">
 							</div>
 							<div class="form-group col-sm-4">
 								<label for="inputCep">CEP:</label>
-								<input type="text" class="form-control" id="inputCep" placeholder="00000-000">
+								<input type="text" class="form-control" th:field="*{cep_func}" placeholder="00000-000" onkeypress="$(this).mask('00.000-000')">
 							</div>						
 						</div>
 						<div class="form-row">
 							<div class="form-group col-sm-12">
 								<label for="inputEnd">Endereço:</label>
-								<input type="text" class="form-control" id="inputEnd" placeholder="Digite o endereço">
+								<input type="text" class="form-control" th:field="*{end_func}" placeholder="Digite o endereço">
 							</div>
 												
 						</div>
 						<div class="form-row">
 							<div class="form-group col-sm-6">
 								<label for="inputCidade">Cidade:</label>
-								<input type="text" class="form-control" id="inputCidade" placeholder="Cidade">
+								<input type="text" class="form-control" th:field="*{cidade_func}" placeholder="Cidade">
 							</div>
 							
 							<div class="form-group col-sm-6">
 								<label for="inputEstado">Estado:</label>
-								<select class="form-control" id="inputEstado">
-									<option selected>Selecione um estado</option>
-									<option>MG</option>
-									<option>...</option>
-									<option>...</option>
-									<option>...</option>
-								</select>
+								<select class="form-control" id="cod_estado" name="cod_estado">
+			                    	<option 
+			                        th:each="estados : ${listaDeEstados}" 
+			                        th:text="${estados.sigla}"
+			                        th:value="${estados.cod_estado}"
+			                        th:selected="  *{cod_estado} == ${estados.cod_estado}">Estado</option>
+		                  		</select>
 							</div>					
 						</div>
 						<div class="form-row">
-							<div class="form-group col-sm-4">
+							<div class="form-group col-sm-6">
 								<label for="inputFuncao">Função:</label>
-								<select class="form-control" id="inputFuncao">
-									<option selected>Selecione uma função</option>
-									<option>Instrutor</option>
-									<option>Recepcionista</option>
-									<option>Gerente</option>
-								</select>
+								<select class="form-control" id="cod_cargo" name="cod_cargo">
+			                    	<option 
+			                        th:each="cargo : ${listaDeCargos}" 
+			                        th:text="${cargo.funcao}"
+			                        th:value="${cargo.cod_cargo}"
+			                        th:selected="  *{cod_cargo} == ${cargo.cod_cargo}">Cargo</option>
+		                  		</select>
 							</div>
 							
-							<div class="form-group col-sm-4">
-								<label for="inputHorario">Horário:</label>
-								<input type="text" class="form-control" id="inputHorario" placeholder="Digite o horário">
+							<div class="form-group col-sm-6">
+								<label for="inputHorario">Carga Horária:</label>
+								<select class="form-control" id="cod_carga_hor" name="cod_carga_hor">
+			                    	<option 
+			                        th:each="carga : ${listaDeCargaHoraria}" 
+			                        th:text="${carga.carga_horaria}"
+			                        th:value="${carga.cod_carga_hor}"
+			                        th:selected="  *{cod_carga_hor} == ${carga.cod_carga_hor}">Carga Horária</option>
+		                  		</select>
+							</div>
+							
+							<div class="form-group col-sm-6">
+								<label for="inputDias">Dias de Trabalho:</label>
+								<select class="form-control" id="cod_dias_trab" name="cod_dias_trab">
+			                    	<option 
+			                        th:each="dias : ${listaDeDiasTrab}" 
+			                        th:text="${dias.dias_trab}"
+			                        th:value="${dias.cod_dias_trab}"
+			                        th:selected="  *{cod_dias_trab} == ${dias.cod_dias_trab}">Dias de trabalho</option>
+		                  		</select>
 
 							</div>
-							<div class="form-group col-sm-4">
-								<label for="inputDias">Dias:</label>
-								<input type="text" class="form-control" id="inputDias" placeholder="Digite os dias da semana">
-
+							
+							<div class="form-group col-sm-6">
+								<label for="inputSalario">Salário:</label>
+								<input type="text" class="form-control" th:field="*{salario}" placeholder="Salário">
 							</div>						
+						
 						</div>
-					
 						<div class="form-row">
 							<button type="submit" class="btn btn-success">Salvar</button>
 						</div>

@@ -18,85 +18,79 @@
 			<div class="row justify-content-center mb-5">
 				<div class="col-sm-12 col-md-10 col-lg-8">
 				<div class="jumbotron">
-					<form>
+					<form action="/editar-cliente" method="post" th:object="${cliente}">
 						<div class="form-row">
 							<div class="form-group col-sm-6">
+								<input type="hidden" class="form-control" th:field="*{cod_cli}">
 								<label for="inputNome">Nome:</label>
-								<input type="text" class="form-control" id="inputNome" value="Alex Sandro Moreira">
+								<input type="text" class="form-control" th:field="*{nome_cli}" value="Nome">
 							</div>
 							
 							<div class="form-group col-sm-6">
 								<label for="inputCpf">CPF:</label>
-								<input type="text" class="form-control" id="inputCpf" value="088.321.626-44">
+								<input type="text" class="form-control" th:field="*{cpf_cli}" value="cpf" onkeypress="$(this).mask('000.000.000-00');">
 							</div>						
 						</div>
 						<div class="form-row">
 							<div class="form-group col-sm-4">
 								<label for="inputEmail">E-mail:</label>
-								<input type="text" class="form-control" id="inputEmail" value="alexmoreiraptc@gmail.com">
+								<input type="text" class="form-control" th:field="*{email_cli}" value="email">
 							</div>
 							
 							<div class="form-group col-sm-4">
 								<label for="inputTelefone">Telefone:</label>
-								<input type="text" class="form-control" id="inputTelefone" value="(34)99999-9999">
+								<input type="text" class="form-control" th:field="*{telefone_cli}" value="Fone" onkeypress="$(this).mask('(00) 00000-0009')">
 							</div>
 							<div class="form-group col-sm-4">
 								<label for="inputCep">CEP:</label>
-								<input type="text" class="form-control" id="inputCep" value="38408-184">
+								<input type="text" class="form-control" th:field="*{cep_cli}" value="cep" onkeypress="$(this).mask('00.000-000')">
 							</div>						
 						</div>
 						<div class="form-row">
 							<div class="form-group col-sm-12">
 								<label for="inputEnd">Endereço:</label>
-								<input type="text" class="form-control" id="inputEnd" value="Avenida João Naves de Ávila, 1">
+								<input type="text" class="form-control" th:field="*{end_cli}" value="Endereço">
 							</div>
 												
 						</div>
 						<div class="form-row">
 							<div class="form-group col-sm-6">
 								<label for="inputCidade">Cidade:</label>
-								<input type="text" class="form-control" id="inputCidade" value="Uberlândia">
+								<input type="text" class="form-control" th:field="*{cidade_cli}" value="Cidade">
 							</div>
 							
 							<div class="form-group col-sm-6">
 								<label for="inputEstado">Estado:</label>
-								<select class="form-control" id="inputEstado">
-									<option>Selecione um estado</option>
-									<option selected>MG</option>
-									<option>...</option>
-									<option>...</option>
-									<option>...</option>
-								</select>
+								<select class="form-control" id="cod_estado" name="cod_estado">
+			                    	<option 
+			                        th:each="estados : ${listaDeEstados}" 
+			                        th:text="${estados.sigla}"
+			                        th:value="${estados.cod_estado}"
+			                        th:selected="  *{cod_estado} == ${estados.cod_estado}">Estado</option>
+		                  		</select>
 							</div>					
 						</div>
 						<div class="form-row">
-							<div class="form-group col-sm-4">
+							<div class="form-group col-sm-6">
 								<label for="inputPlano">Plano:</label>
-								<select class="form-control" id="inputPlano">
-									<option>Selecione um plano</option>
-									<option>Mensal</option>
-									<option>Trimestral</option>
-									<option selected>Semestral</option>
-									<option>Diarista</option>
-								</select>
+								<select class="form-control" id="cod_plano" name="cod_plano">
+			                    	<option 
+			                        th:each="plano : ${listaDePlanos}" 
+			                        th:text="${plano.nome_plano} +' | R$'+ ${plano.valor_mensal}"
+			                        th:value="${plano.cod_plano}"
+			                        th:selected="  *{cod_plano} == ${plano.cod_plano}">Plano</option>
+		                  		</select>
 							</div>
-							
-							<div class="form-group col-sm-4">
-								<label for="inputHorario">Horário:</label>
-								<select class="form-control" id="inputHorario">
-									<option>Selecione um horário</option>
-									<option selected>Livre</option>
-									<option>Light (10 às 16)</option>
-								</select>
-							</div>
-							<div class="form-group col-sm-4">
+
+							<div class="form-group col-sm-6">
 								<label for="inputInstrutor">Instrutor:</label>
-								<select class="form-control" id="inputInstrutor">
-									<option>Selecione um instrutor</option>
-									<option>João</option>
-									<option selected>Maria</option>
-									<option>Ana</option>
-								</select>
+								<select class="form-control" id="cod_func" name="cod_func">
+			                    	<option 
+			                        th:each="func : ${listaDeFuncionarios}" 
+			                        th:text="${func.nome_func}"
+			                        th:value="${func.cod_func}"
+			                        th:selected="  *{cod_func} == ${func.cod_func}">Instrutor</option>
+		                  		</select>
 							</div>						
 						</div>
 					

@@ -18,71 +18,75 @@
 			<div class="row justify-content-center mb-5">
 				<div class="col-sm-12 col-md-10 col-lg-8">
 				<div class="jumbotron">
+				<form action="" method="" th:object="${func}">
 						<div class="row">
 							<div class="col-sm-6">
 								<p><strong>Nome:</strong></p>
-								<p>Luana Martins da Silva</p>
+								<p th:text="*{nome_func}">Nome</p>
 							</div>
 							
 							<div class="col-sm-6">
 								<p><strong>CPF:</strong></p>
-								<p>989.777.123.00</p>
+								<p th:text="*{cpf_func}">CPF</p>
 							</div>						
 						</div>
 						<div class="row">
 							<div class="col-sm-4">
 								<p><strong>E-mail:</strong></p>
-								<p>luanam@site.com.br</p>
+								<p th:text="*{email_func}">EMAIL</p>
 							</div>
 							
 							<div class="col-sm-4">
 								<p><strong>Telefone:</strong></p>
-								<p>(34)98989-9999</p>
+								<p th:text="*{telefone_func}">telefone</p>
 							</div>
 							<div class="col-sm-4">
 								<p><strong>CEP:</strong></p>
-								<p>38000-222</p>
+								<p th:text="*{cep_func}">CEP</p>
 							</div>						
 						</div>
 						<div class="row">
 							<div class="col-sm-12">
 								<p><strong>Endereço:</strong></p>
-								<p>Rua Saturno, 489</p>
+								<p th:text="*{end_func}">endereço</p>
 							</div>
 												
 						</div>
 						<div class="row">
 							<div class="col-sm-6">
 								<p><strong>Cidade:</strong></p>
-								<p>Uberlândia</p>
+								<p th:text="*{cidade_func}">Cidade</p>
 							</div>
 							
 							<div class="col-sm-6">
 								<p><strong>Estado:</strong></p>
-								<p>MG</p>
+								<p th:text="*{sigla}">Sigla</p>
 							</div>					
 						</div>
 						<div class="row">
-							<div class="col-sm-4">
+							<div class="col-sm-6">
 								<p><strong>Função:</strong></p>
-								<p>Instrutor</p>
+								<p th:text="*{funcao}">Função</p>
 							</div>
 							
-							<div class="col-sm-4">
-								<p><strong>Horário:</strong></p>
-								<p>06:00 às 14:00</p>
+							<div class="col-sm-6">
+								<p><strong>Carga Horária:</strong></p>
+								<p th:text="*{carga_horaria}">Carga</p>
 							</div>
-							<div class="col-sm-4">
-								<p><strong>Dias:</strong></p>
-								<p>Seg a Sex</p>
-							</div>						
-						</div>
-					
-						<div class="row">
-							<a href="/edit-funcionario" class="btn btn-success mr-2">Editar</a>
-  							<a href="/ger-funcionarios" class="btn btn-dark">Voltar</a>
+							<div class="col-sm-6">
+								<p><strong>Dias de Trabalho:</strong></p>
+								<p th:text="*{dias_trab}">Dias</p>
+							</div>		
+							<div class="col-sm-6">
+								<p><strong>Salário:</strong></p>
+								<p th:text="*{salario}">Salário</p>
+							</div>					
 						</div>
 					</form>
+						<div class="row">
+							<a class="btn btn-secondary btn-xs" th:href="@{/edit-funcionario(cod_func=${func.cod_func})}">Editar</a>
+  							<a href="/ger-funcionarios" class="btn btn-dark">Voltar</a>
+						</div>
 					</div>
 				
 				</div>

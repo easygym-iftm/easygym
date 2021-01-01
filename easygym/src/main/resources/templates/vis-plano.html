@@ -9,6 +9,7 @@
 
 	<div th:fragment="conteudo">
 		<div class="container">
+		
 			<div class="row">
 				<div class="col-12 text-center my-3">
 					<h1 class="display-4">Dados do Cliente</h1>
@@ -18,20 +19,24 @@
 			<div class="row justify-content-center mb-5">
 				<div class="col-sm-12 col-md-10 col-lg-8">
 				<div class="jumbotron">
+				<form action="" method="" th:object="${plano}">
 						<div class="row">
-							<div class="col-sm-6">
+							<div class="col-sm-4">
 								<p><strong>Plano:</strong></p>
-								<p>Mensal</p>
+								<p th:text="*{nome_plano}">Plano</p>
 							</div>
-							
-							<div class="col-sm-6">
+							<div class="col-sm-4">
+								<p><strong>Horário:</strong></p>
+								<p th:text="*{horario.faixa_horario}">Horário</p>
+							</div>
+							<div class="col-sm-4">
 								<p><strong>Valor:</strong></p>
-								<p>90,00</p>
+								<p th:text="*{valor_mensal}">0,00</p>
 							</div>						
 						</div>
-						
+				</form>			
 						<div class="row">
-							<a href="/edit-plano" class="btn btn-success mr-2">Editar</a>
+							<a  class="btn btn-success mr-2" th:href="@{/edit-plano(cod_plano=${plano.cod_plano})}">Editar</a>
   							<a href="/ger-planos" class="btn btn-dark">Voltar</a>
 						</div>
 					</div>

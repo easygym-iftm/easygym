@@ -24,61 +24,26 @@
 		                    <th>ID</th>
 		                    <th>NOME</th>
 		                    <th class="text-center">FUNÇÃO</th>
-		                    <th class="text-center">HORÁRIO</th>
+		                    <th class="text-center">CARGA HORÁRIA</th>
 		                    <th class="text-center">DIAS</th>
 		                    <th class="actions text-center">Ações</th>
 		                 </tr>
 		            </thead>
 		            <tbody>
 		 
-		                <tr>
-		                    <td>1001</td>
-		                    <td>Luana Martins da Silva</td>
-		                    <td class="text-center">Instrutor</td>
-		                    <td class="text-center">06:00 às 14:00</td>
-		                    <td class="text-center">Seg a Sex</td>
+		                <tr th:each="funcionario:${lista}" th:object="${funcionario}">
+		                    <td th:text="*{cod_func}" >Cod</td>
+		                    <td th:text="*{nome_func}" >Nome</td>
+		                    <td th:text="*{funcao}" class="text-center">Instrutor</td>
+		                    <td th:text="*{carga_horaria}" class="text-center">Carga horária</td>
+		                    <td th:text="*{dias_trab}" class="text-center">Dias de serviço</td>
 		                    <td class="actions text-center">
-		                        <a class="btn btn-success btn-xs" href="/vis-funcionario">Visualizar</a>
-		                        <a class="btn btn-secondary btn-xs" href="/edit-funcionario">Editar</a>
-		                        <a class="btn btn-dark btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
+		                        <a class="btn btn-success btn-xs" th:href="@{/vis-funcionario(cod_func=${funcionario.cod_func})}">Visualizar</a>
+		                        <a class="btn btn-secondary btn-xs" th:href="@{/edit-funcionario(cod_func=${funcionario.cod_func})}">Editar</a>
+		                        <a class="btn btn-dark btn-xs" th:href="@{/excluir-funcionario(cod_func=${funcionario.cod_func})}">Excluir</a>
 		                    </td>
 		                </tr>
-		 				<tr>
-		                    <td>1002</td>
-		                    <td>Caio Souza</td>
-		                    <td class="text-center">Instrutor</td>
-		                    <td class="text-center">14:00 às 20:00</td>
-		                    <td class="text-center">Seg a Sex</td>
-		                    <td class="actions text-center">
-		                        <a class="btn btn-success btn-xs" href="/vis-funcionario">Visualizar</a>
-		                        <a class="btn btn-secondary btn-xs" href="/edit-funcionario">Editar</a>
-		                        <a class="btn btn-dark btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
-		                    </td>
-		                </tr>
-		                <tr>
-		                    <td>1003</td>
-		                    <td>Mariana da Silva</td>
-		                    <td class="text-center">Recepcionista</td>
-		                    <td class="text-center">08:00 às 18:00</td>
-		                    <td class="text-center">Seg a Sab</td>
-		                    <td class="actions text-center">
-		                        <a class="btn btn-success btn-xs" href="/vis-funcionario">Visualizar</a>
-		                        <a class="btn btn-secondary btn-xs" href="/edit-funcionario">Editar</a>
-		                        <a class="btn btn-dark btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
-		                    </td>
-		                </tr>
-		                <tr>
-		                    <td>1004</td>
-		                    <td>Carlos Matoso</td>
-		                    <td class="text-center">Gerente</td>
-		                    <td class="text-center">08:00 às 18:00</td>
-		                    <td class="text-center">Seg a Sex</td>
-		                    <td class="actions text-center">
-		                        <a class="btn btn-success btn-xs" href="/vis-funcionario">Visualizar</a>
-		                        <a class="btn btn-secondary btn-xs" href="/edit-funcionario">Editar</a>
-		                        <a class="btn btn-dark btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
-		                    </td>
-		                </tr>
+		 				
 		            </tbody>
 		         </table>
 		 

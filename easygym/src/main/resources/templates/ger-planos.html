@@ -21,56 +21,25 @@
 		        <table class="table table-striped" cellspacing="0" cellpadding="0">
 		            <thead>
 		                <tr>
-		                    <th>ID</th>
+		                    <th class="text-center">ID</th>
 		                    <th class="text-center">PLANO</th>
+		                    <th class="text-center">FAIXA HORÁRIA</th>
 		                    <th class="text-center">VALOR</th>
 		                    <th class="actions text-center">Ações</th>
 		                 </tr>
 		            </thead>
 		            <tbody>
 		 
-		                <tr>
-		                    <td>1001</td>
-		                    <td class="text-center">Mensal</td>
-		                    <td class="text-center">90,00</td>
+		                <tr th:each="plano:${lista}" th:object="${plano}">
+		                    <td th:text="*{cod_plano}">Cod</td>
+		                    <td th:text="*{nome_plano}" class="text-center">Nome</td>
+		                    <td th:text="*{horario.faixa_horario}" class="text-center">Horário</td>
+		                    <td th:text="*{valor_mensal}" class="text-center">Valor</td>
+		                    
 		                    <td class="actions text-center">
-		                        <a class="btn btn-success btn-xs" href="/vis-plano">Visualizar</a>
-		                        <a class="btn btn-secondary btn-xs" href="/edit-plano">Editar</a>
-		                        <a class="btn btn-dark btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
-		                    </td>
-		                </tr>
-		 
-		            		 
-		                <tr>
-		                    <td>1002</td>
-		                    <td class="text-center">Trimestral</td>
-		                    <td class="text-center">85,00</td>
-		                    <td class="actions text-center">
-		                        <a class="btn btn-success btn-xs" href="/vis-plano">Visualizar</a>
-		                        <a class="btn btn-secondary btn-xs" href="/edit-plano">Editar</a>
-		                        <a class="btn btn-dark btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
-		                    </td>
-		                </tr>
-		 
-		                
-		                <tr>
-		                    <td>1003</td>
-		                    <td class="text-center">Semestral</td>
-		                    <td class="text-center">80,00</td>
-		                    <td class="actions text-center">
-		                        <a class="btn btn-success btn-xs" href="/vis-plano">Visualizar</a>
-		                        <a class="btn btn-secondary btn-xs" href="/edit-plano">Editar</a>
-		                        <a class="btn btn-dark btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
-		                    </td>
-		                </tr>
-		                 <tr>
-		                    <td>1004</td>
-		                    <td class="text-center">Diarista</td>
-		                    <td class="text-center">10,00</td>
-		                    <td class="actions text-center">
-		                        <a class="btn btn-success btn-xs" href="/vis-plano">Visualizar</a>
-		                        <a class="btn btn-secondary btn-xs" href="/edit-plano">Editar</a>
-		                        <a class="btn btn-dark btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
+		                        <a class="btn btn-success btn-xs" th:href="@{/vis-plano(cod_plano=${plano.cod_plano})}">Visualizar</a>
+		                        <a class="btn btn-secondary btn-xs" th:href="@{/edit-plano(cod_plano=${plano.cod_plano})}">Editar</a>
+		                        <a class="btn btn-dark btn-xs" th:href="@{/excluir-plano(cod_plano=${plano.cod_plano})}">Excluir</a>
 		                    </td>
 		                </tr>
 		 

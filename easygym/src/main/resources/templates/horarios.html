@@ -18,16 +18,17 @@
 			<div class="row justify-content-center mb-5">
 				<div class="col-sm-12 col-md-5 col-lg-8">
 				<div class="jumbotron">
-					<form>
+						<form action="/cad-horario" method="post" th:object="${horario}">
+
 						<div class="form-row">
 							<div class="form-group col-sm-6">
 								<label for="inputHorario">Horário:</label>
-								<input type="text" class="form-control" id="inputHorario" placeholder="Digite o nome para o horário">
+								<input type="text" class="form-control" th:field="*{horario}" placeholder="Digite o nome para o horário">
 							</div>
 							
 							<div class="form-group col-sm-6">
 								<label for="inputFaixa">Faixa horária:</label>
-								<input type="text" class="form-control" id="inputFaixa" placeholder="00:00 às 00:00">
+								<input type="text" class="form-control" th:field="*{faixa_horario}" placeholder="00:00 às 00:00">
 							</div>						
 						</div>
 						

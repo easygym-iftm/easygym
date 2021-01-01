@@ -18,16 +18,28 @@
 			<div class="row justify-content-center mb-5">
 				<div class="col-sm-12 col-md-5 col-lg-8">
 				<div class="jumbotron">
-					<form>
+					<form action="/editar-plano" method="post" th:object="${plano}">
 						<div class="form-row">
 							<div class="form-group col-sm-6">
+								<input type="hidden" class="form-control" th:field="*{cod_plano}">
 								<label for="inputPlano">Plano:</label>
-								<input type="text" class="form-control" id="inputPlano" value="Mensal">
+								<input type="text" class="form-control" th:field="*{nome_plano}" value="Plano">
 							</div>
+							
+						  <div class="form-group col-sm-4">
+		                  <label for="inputInstrutor">Horário:</label>
+		                  <select class="form-control" id="cod_horario" name="cod_horario">
+		                    <option 
+		                        th:each="hora : ${listaDeHorarios}" 
+		                        th:text="${hora.faixa_horario}"
+		                        th:value="${hora.cod_horario}"
+		                        th:selected="  *{cod_horario} == ${hora.cod_horario}">João</option>
+		                  </select>
+		                </div>
 							
 							<div class="form-group col-sm-6">
 								<label for="inputValor">Valor:</label>
-								<input type="text" class="form-control" id="inputValor" value="90,00">
+								<input type="text" class="form-control" th:field="*{valor_mensal}" value="0,00">
 							</div>						
 						</div>
 						
